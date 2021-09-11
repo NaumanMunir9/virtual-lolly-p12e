@@ -4,6 +4,10 @@ import React from "react";
 // components
 import Header from "../components/Header";
 import Lolly from "../components/Lolly";
+import Footer from "../components/Footer";
+
+// styles
+import "../styles/CreateNewPage.css";
 
 export default function CreateNewPage() {
   return (
@@ -92,6 +96,8 @@ export default function CreateNewPage() {
           />
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }
