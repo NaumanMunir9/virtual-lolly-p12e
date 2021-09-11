@@ -1,4 +1,8 @@
+// libraries
 import React from "react";
+
+// styles
+import "../styles/Header.css";
 
 export default function Header() {
   return (
