@@ -1,5 +1,5 @@
 // libraries
-import React from "react";
+import React, { useState } from "react";
 
 // components
 import Header from "../components/Header";
@@ -10,15 +10,34 @@ import Footer from "../components/Footer";
 import "../styles/CreateNewPage.css";
 
 export default function CreateNewPage() {
+  // flavour
+  const [flavourTop, setFlavourTop] = useState("#E97393");
+  const [flavourMiddle, setFlavourMiddle] = useState("#D03F5F");
+  const [flavourBottom, setFlavourBottom] = useState("#BB3A5F");
+
+  // form
+  const [recipientName, setRecipientName] = useState("");
+  const [message, setMessage] = useState("");
+  const [senderName, setSenderName] = useState("");
+
+  const handleFormSubmit = () => {
+    console.log(`FlavourTop: ${flavourTop}`);
+    console.log(`FlavourMiddle: ${flavourMiddle}`);
+    console.log(`flavourBottom: ${flavourBottom}`);
+    console.log(`recipientName: ${recipientName}`);
+    console.log(`message: ${message}`);
+    console.log(`senderName: ${senderName}`);
+  };
+
   return (
     <>
       <Header />
       <div className="createNewPage__container">
         <div>
           <Lolly
-            fillLollyTop="#E97393"
-            fillLollyMiddle="#D03F5F"
-            fillLollyBottom="#BB3A5F"
+            fillLollyTop={flavourTop}
+            fillLollyMiddle={flavourMiddle}
+            fillLollyBottom={flavourBottom}
           />
         </div>
 
@@ -30,7 +49,8 @@ export default function CreateNewPage() {
               name="flavourTop"
               id="flavourTop"
               className="colorPicker"
-              value="#E97393"
+              value={flavourTop}
+              onChange={(e) => setFlavourTop(e.target.value)}
             />
           </label>
 
@@ -40,7 +60,8 @@ export default function CreateNewPage() {
               name="flavourMiddle"
               id="flavourMiddle"
               className="colorPicker"
-              value="#D03F5F"
+              value={flavourMiddle}
+              onChange={(e) => setFlavourMiddle(e.target.value)}
             />
           </label>
 
@@ -50,7 +71,8 @@ export default function CreateNewPage() {
               name="flavourBottom"
               id="flavourBottom"
               className="colorPicker"
-              value="#BB3A5F"
+              value={flavourBottom}
+              onChange={(e) => setFlavourBottom(e.target.value)}
             />
           </label>
         </div>
@@ -65,6 +87,8 @@ export default function CreateNewPage() {
                 name="recipientName"
                 id="recipientName"
                 placeholder="A lolly for..."
+                value={recipientName}
+                onChange={(e) => setRecipientName(e.target.value)}
               />
             </div>
 
@@ -75,6 +99,8 @@ export default function CreateNewPage() {
                 id="message"
                 cols="30"
                 rows="10"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
 
@@ -85,6 +111,8 @@ export default function CreateNewPage() {
                 name="senderName"
                 id="senderName"
                 placeholder="From your friend..."
+                value={senderName}
+                onChange={(e) => setSenderName(e.target.value)}
               />
             </div>
           </div>
@@ -93,6 +121,7 @@ export default function CreateNewPage() {
             type="submit"
             value="freeze this lolly and get a link"
             className="freeze__lolly__btn"
+            onClick={handleFormSubmit}
           />
         </div>
       </div>
