@@ -1,0 +1,8 @@
+.header__component {
+  margin: 3rem;
+}
+
+.header__component > h1,
+p {
+  margin: 1rem;
+}

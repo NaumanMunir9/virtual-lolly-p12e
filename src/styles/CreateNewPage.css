@@ -1,0 +1,95 @@
+.createNewPage__container {
+  margin: 0 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  margin-left: 4rem;
+}
+
+.form__details {
+  padding: 1em 2em;
+  margin-bottom: 1.5em;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgb(0 0 0 / 60%);
+  text-align: left;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+.flavours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 3em;
+}
+
+.pickerLabel {
+  height: 40px;
+  width: 40px;
+  border-radius: 24px;
+  border: 2px solid #fff;
+  display: block;
+  overflow: hidden;
+  margin: 30px;
+  box-shadow: 0 0 14px #000;
+}
+
+.colorPicker {
+  height: 60px;
+  width: 60px;
+  margin-top: -10px;
+  margin-left: -10px;
+  cursor: pointer;
+}
+
+label {
+  font-family: sans-serif;
+  font-size: 0.8em;
+  display: block;
+  color: #bbb;
+  margin-bottom: 0.5em;
+  font-style: normal;
+}
+
+input[type="text"],
+textarea {
+  font-size: 0.9em;
+  width: 100%;
+  padding: 0.4em 0.2em;
+  margin: 0 -0.2em;
+  border: 1px solid #fa73d9;
+  color: #fff;
+  background-color: #222;
+  box-shadow: 0 0 6px #fa73d9;
+}
+
+.form__details__to,
+.form__details__from {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.freeze__lolly__btn {
+  margin-top: 1em;
+  margin-bottom: 3em;
+  box-shadow: 0 0 6px #fa73d9;
+  border: 2px solid #fa73d9;
+  background-color: transparent;
+  font-size: 0.9em;
+  color: #fa73d9;
+  padding: 1em 2em;
+  border-radius: 4em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.freeze__lolly__btn:hover {
+  background-color: #fa73d9;
+  color: black;
+}
