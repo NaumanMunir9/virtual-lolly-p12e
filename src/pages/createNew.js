@@ -1,5 +1,6 @@
 // libraries
 import React, { useState } from "react";
+import { useMutation, gql } from "@apollo/client";
 
 // components
 import Header from "../components/Header";
@@ -8,6 +9,31 @@ import Footer from "../components/Footer";
 
 // styles
 import "../styles/CreateNewPage.css";
+
+const CREATE_LOLLY = gql`
+  mutation createLolly(
+    $flavourTop: String!
+    $flavourMiddle: String!
+    $flavourBottom: String!
+    $recipientName: String!
+    $message: String!
+    $senderName: String!
+  ) {
+    createLolly(
+      flavourTop: $flavourTop
+      flavourMiddle: $flavourMiddle
+      flavourBottom: $flavourBottom
+      recipientName: $recipientName
+      message: $message
+      senderName: $senderName
+    ) {
+      recipientName
+      message
+      senderName
+      lollyPath
+    }
+  }
+`;
 
 export default function CreateNewPage() {
   // flavour
@@ -20,13 +46,21 @@ export default function CreateNewPage() {
   const [message, setMessage] = useState("");
   const [senderName, setSenderName] = useState("");
 
-  const handleFormSubmit = () => {
-    console.log(`FlavourTop: ${flavourTop}`);
-    console.log(`FlavourMiddle: ${flavourMiddle}`);
-    console.log(`flavourBottom: ${flavourBottom}`);
-    console.log(`recipientName: ${recipientName}`);
-    console.log(`message: ${message}`);
-    console.log(`senderName: ${senderName}`);
+  const [createLolly] = useMutation(CREATE_LOLLY);
+
+  const handleFormSubmit = async () => {
+    const result = await createLolly({
+      variables: {
+        flavourTop,
+        flavourMiddle,
+        flavourBottom,
+        recipientName,
+        message,
+        senderName,
+      },
+    });
+
+    console.log(`Result createLolly: ${result}`);
   };
 
   return (

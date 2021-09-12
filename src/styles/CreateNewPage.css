@@ -93,3 +93,8 @@ textarea {
   background-color: #fa73d9;
   color: black;
 }
+
+.freeze__lolly__btn:active {
+  outline: none;
+  border: none;
+}
