@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-apollo",
       options: {
-        uri: "http://localhost:8888/.netlify/functions/newLolly",
+        uri: "https://virtual-lolly-p12e-mnm.netlify.app/.netlify/functions/newLolly",
       },
     },
   ],
