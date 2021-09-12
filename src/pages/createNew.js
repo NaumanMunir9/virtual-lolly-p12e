@@ -61,6 +61,10 @@ export default function CreateNewPage() {
     });
 
     console.log(`Result createLolly: ${result}`);
+
+    setRecipientName("");
+    setMessage("");
+    setSenderName("");
   };
 
   return (
