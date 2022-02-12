@@ -1,12 +1,10 @@
 // libraries
 import React from "react";
 import { Link } from "gatsby";
-
 // components
 import Header from "../components/Header";
 import Lolly from "../components/Lolly";
 import Footer from "../components/Footer";
-
 // styles
 import "../styles/HomePage.css";
 
