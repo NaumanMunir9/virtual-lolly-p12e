@@ -1,6 +1,5 @@
 // libraries
 import React from "react";
-
 // styles
 import "../styles/Footer.css";
 
